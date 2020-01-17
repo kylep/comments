@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: buildpack-deps:bionic
+      # Using latest can cause failures, but I hope it will help me keep up
+      - image: circleci/node:latest
     working_directory: /app
     steps:
       - checkout
