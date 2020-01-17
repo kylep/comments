@@ -1,23 +1,10 @@
-version: 2.1
-
-executors:
-  executor-buildpack:
+version: 2
+jobs:
+  build:
     docker:
-       - image: buildpack-deps:bionic
-
-commands:
-  cmd-main:
+      - image: buildpack-deps:bionic
+    working_directory: /app
     steps:
+      - checkout
       - run: npm install --prefix=./firebase-deploy firebase-tools
       - run: firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
-
-jobs:
-  job-main:
-    executor: executor-buildpack
-    steps:
-      - cmd-main
-
-workflows:
-  main:
-    jobs
-      - job-main
