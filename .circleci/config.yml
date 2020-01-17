@@ -4,7 +4,6 @@ jobs:
     docker:
       # Using latest can cause failures, but I hope it will help me keep up
       - image: circleci/node:latest
-    working_directory: /app
     steps:
       - checkout
       - run: npm install --prefix=./firebase-deploy firebase-tools
