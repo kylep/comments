@@ -1,4 +1,5 @@
-import * as functions from 'firebase-functions';
+// the following line breaks tslint
+// import * as functions from 'firebase-functions';
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
